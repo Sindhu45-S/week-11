@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+  --bg-main: linear-gradient(135deg, #4f46e5, #9333ea, #c026d3);
+  --purple-1: #4f46e5;   /* primary */
+  --purple-2: #9333ea;   /* secondary */
+  --purple-3: #c026d3;   /* accent */
+
+  --glass-bg: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.25);
+
+  --text-main: #ffffff;
+  --text-muted: #e5e7eb;
+}
