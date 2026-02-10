@@ -1,0 +1,61 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg-main);
+
+}
+
+/* Top bar */
+.header {
+  height: 60px;
+  background: #040d2d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.email {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.profileBtn {
+  background: #374151;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logoutBtn {
+  background: #ef4444;
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background: #dc2626;
+}
+
+/* Main area */
+.main {
+  flex: 1;
+  display: flex;
+  background: #f3f4f6;
+}
