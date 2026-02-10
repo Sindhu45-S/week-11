@@ -1,0 +1,225 @@
+:root{
+  --bg:#0f1724;
+  --card: rgba(255,255,255,0.04);
+  --accent-1: linear-gradient(135deg,#7c3aed 0%,#06b6d4 100%);
+  --accent-2: linear-gradient(135deg,#06b6d4 0%,#7c3aed 100%);
+  --muted: rgba(255,255,255,0.65);
+  --glass: rgba(255,255,255,0.03);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 18px;
+
+  background-color:  #020617;
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  border: 1px solid #22d3ee;
+
+  color: #ffffff;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.chatWindow{
+  background: var(--card);
+  border-radius:14px;
+  padding:18px;
+  box-shadow: 0 6px 24px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  min-height:420px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+.messages{
+  flex:1 1 auto;
+  overflow:auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding-right:6px;
+}
+
+.message{
+  display:inline-flex;
+  flex-direction:column;
+  gap:6px;
+  align-self:flex-start;
+  max-width:78%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);
+  padding:10px 14px;
+  border-radius:12px;
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  backdrop-filter: blur(6px) saturate(120%);
+  animation: fadeUp .32s ease both;
+}
+
+/* own vs other */
+.own{
+  align-self:flex-end;
+  background: linear-gradient(135deg,#06b6d4 0%,#7c3aed 100%);
+  color: white;
+  border:none;
+  box-shadow: 0 10px 30px rgba(6,182,212,0.12);
+  border-radius:14px 14px 4px 14px;
+}
+
+.other{
+  align-self:flex-start;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  color: #dbeafe;
+  border:1px solid rgba(255,255,255,0.03);
+  border-radius:14px 14px 14px 4px;
+}
+
+.messageAuthor{
+  font-weight:600;
+  color: #e6eef8;
+  font-size:13px;
+}
+
+.messageContent{
+  color: #dbeafe;
+  font-size:14px;
+  line-height:1.35;
+  white-space:pre-wrap;
+}
+
+.inputRow {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background: #020617;
+}
+
+.input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #748fb7;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  background: rgb(113, 115, 115);     
+  color: #111827;       
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.input:focus{
+  box-shadow: 0 6px 18px rgba(6,182,212,0.08);
+  transform: translateY(-1px);
+  border-color: rgba(6,182,212,0.6);
+}
+
+.button{
+  padding:10px 16px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  color:white;
+  background: var(--accent-1);
+  box-shadow: 0 8px 24px rgba(124,58,237,0.14);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+
+.button:hover{ transform: translateY(-2px); }
+.button:active{ transform: translateY(0); opacity:0.95 }
+
+@keyframes fadeUp{
+  from{ opacity:0; transform: translateY(6px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* scrollbar - subtle */
+.messages::-webkit-scrollbar{ width:8px }
+.messages::-webkit-scrollbar-thumb{ background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border-radius:8px }
+
+/* Compact / mobile adjustments */
+@media (max-width: 600px){
+  .container{ padding:10px; margin:12px auto; }
+  .chatWindow{ min-height:320px; padding:12px }
+  .message{ max-width:88%; padding:8px 10px; gap:4px }
+  .messageAuthor{ font-size:12px }
+  .messageContent{ font-size:13px }
+  .input{ padding:10px 12px }
+  .button{ padding:9px 12px }
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.chatBox {
+  border: 1px solid #ccc;
+  height: 300px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.marginTop {
+  margin-top: 10px;
+}
+
+
+/* make the input flex so preview doesn't push it out of the row */
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 5px;
+}
+
+.button {
+  padding: 5px;
+}
+.chatContainer {
+  width: 400px;
+  height: 500px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.image {
+  margin-top: 6px;
+  max-width: 220px;
+  border-radius: 10px;
+}
+
+/* Preview area shown when a file is selected */
+.previewContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 8px;
+  flex: none;
+}
+
+.previewImage {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.removePreviewBtn {
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}

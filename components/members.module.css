@@ -1,0 +1,15 @@
+.sidebar {
+  width: 220px;
+  background: #111827;
+  color: white;
+  padding: 12px;
+  height: 670px;
+}
+
+.member {
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 7px;
+  font-size: 14px;
+  background: #1f2933;
+}
